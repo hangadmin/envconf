@@ -75,7 +75,3 @@ if [ -f "$HOME/.rc.d/aliases.sh" ]; then
     source $HOME/.rc.d/aliases.sh
 fi
 
-# source functions.sh
-if [ -f "$HOME/.rc.d/functions.sh" ]; then
-    source $HOME/.rc.d/functions.sh
-fi
