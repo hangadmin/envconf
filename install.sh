@@ -3,7 +3,7 @@
 _PWD=$PWD
 RC_DIR="$HOME/.rc.d"
 
-PYTHON_VERSION='3.6.8'
+PYTHON_VERSION='3.6.9'
 BREW_URL='https://raw.githubusercontent.com/Homebrew/install/master/install'
 OH_MY_ZSH_URL='https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh'
 POWERLINE_FONTS_URL='https://github.com/powerline/fonts.git'
@@ -68,11 +68,12 @@ else
 fi
 
 # install python
-if ! pyenv versions | grep $PYTHON_VERSION > /dev/null; then
-    env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install -kv $PYTHON_VERSION
-else
-    echo "Python v$PYTHON_VERSION is already installed"
-fi
+#if ! pyenv versions | grep $PYTHON_VERSION > /dev/null; then
+#    env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install -kv $PYTHON_VERSION
+#else
+#    echo "Python v$PYTHON_VERSION is already installed"
+#fi
+
 
 # mkdir .local/bin
 mkdir -p $HOME/.local/bin
@@ -84,13 +85,21 @@ else
     echo "rc.d is already cloned"
 fi
 
+
+mkdir -p $HOME/.pyenv/cache
+mv $RC_DIR/Python-2.7.16.tar.xz $HOME/.pyenv/cache
+mv $RC_DIR/Python-3.6.9.tar.xz $HOME/.pyenv/cache
+mv $RC_DIR/Python-3.7.3.tar.xz $HOME/.pyenv/cache
+pyenv install 2.7.16
+pyenv install 3.6.9
+pyenv install 3.7.3
+
+
 # link rc files
 cd $HOME
 ln -sf .rc.d/gitconfig .gitconfig
 ln -sf .rc.d/vimrc .vimrc
 ln -sf .rc.d/zshrc .zshrc
-ln -sf .rc.d/bashrc .bashrc
-ln -sf .rc.d/tmux.conf .tmux.conf
 
 # link zsh themes
 cd $HOME/.oh-my-zsh/custom/themes
