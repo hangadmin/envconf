@@ -39,7 +39,7 @@ exist() {
 #fi
 apt update -y
 apt-get install -y zsh git curl wget
-apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev
+apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libffi-dev
 
 # install powerline fonts
 if [ ! -d $HOME/.powerline-fonts ]; then
@@ -91,9 +91,12 @@ mv $RC_DIR/Python-2.7.16.tar.xz $HOME/.pyenv/cache
 mv $RC_DIR/Python-3.6.9.tar.xz $HOME/.pyenv/cache
 mv $RC_DIR/Python-3.7.3.tar.xz $HOME/.pyenv/cache
 pyenv install 2.7.16
-pyenv install 3.6.9
+#pyenv install 3.6.9
 pyenv install 3.7.3
 
+echo 'eval "$(pyenv init -)"' >> ~/.zshenv
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshenv
+exec "$SHELL"
 
 # link rc files
 cd $HOME
