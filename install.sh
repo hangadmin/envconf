@@ -3,12 +3,12 @@
 _PWD=$PWD
 RC_DIR="$HOME/.rc.d"
 
-PYTHON_VERSION='3.6.9'
+PYTHON_VERSION='3.7.3'
 BREW_URL='https://raw.githubusercontent.com/Homebrew/install/master/install'
 OH_MY_ZSH_URL='https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh'
 POWERLINE_FONTS_URL='https://github.com/powerline/fonts.git'
 PYENV_URL='https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer'
-RC_URL='https://github.com/seamile/rc.d.git'
+RC_URL='https://github.com/hangadmin/envconf.git'
 
 # check cmd exist
 exist() {
