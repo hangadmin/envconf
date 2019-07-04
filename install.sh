@@ -110,7 +110,7 @@ exec "$SHELL"
 
 # link zsh themes
 cd $HOME/.oh-my-zsh/custom/themes
-for name in `ls $RC_DIR/omz-theme`
+for name in 'ls $RC_DIR/omz-theme'
 do
     ln -sf $RC_DIR/omz-theme/$name $name
 done
