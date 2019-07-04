@@ -94,15 +94,19 @@ pyenv install 2.7.16
 #pyenv install 3.6.9
 pyenv install 3.7.3
 
-echo 'eval "$(pyenv init -)"' >> ~/.zshenv
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshenv
-exec "$SHELL"
+
 
 # link rc files
 cd $HOME
 ln -sf .rc.d/gitconfig .gitconfig
 ln -sf .rc.d/vimrc .vimrc
 ln -sf .rc.d/zshrc .zshrc
+
+echo 'export PATH=~/.pyenv/bin:$PATH' >> ~/.zshrc
+echo 'export PYENV_ROOT=~/.pyenv' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+exec "$SHELL"
 
 # link zsh themes
 cd $HOME/.oh-my-zsh/custom/themes
@@ -114,7 +118,7 @@ done
 # install python requirements
 pyenv global $PYTHON_VERSION
 #pip install -r $RC_DIR/requirements.txt
-
+source ~/.zshrc
 ## setup aria2
 #mkdir -p $HOME/.aria2
 #cd $HOME/.aria2
