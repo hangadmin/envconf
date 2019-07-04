@@ -56,6 +56,8 @@ else
     echo "oh-my-zsh is already installed"
 fi
 
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 # install pyenv
 if [ ! -d $HOME/.pyenv ]; then
     curl -L $PYENV_URL | bash
