@@ -104,10 +104,6 @@ ln -sf .rc.d/gitconfig .gitconfig
 ln -sf .rc.d/vimrc .vimrc
 ln -sf .rc.d/zshrc .zshrc
 
-echo 'export PATH=~/.pyenv/bin:$PATH' >> ~/.zshrc
-echo 'export PYENV_ROOT=~/.pyenv' >> ~/.zshrc
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 exec "$SHELL"
 
 # link zsh themes
