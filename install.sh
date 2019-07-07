@@ -39,7 +39,10 @@ exist() {
 #fi
 apt update -y
 apt-get install -y zsh git curl wget
-apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libffi-dev
+apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libffi-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+
+chsh -s /bin/zsh
 
 # install powerline fonts
 if [ ! -d $HOME/.powerline-fonts ]; then
@@ -78,7 +81,7 @@ fi
 
 
 # mkdir .local/bin
-mkdir -p $HOME/.local/bin
+#mkdir -p $HOME/.local/bin
 
 # clone rc.d
 if [ ! -d $RC_DIR ]; then
@@ -104,7 +107,6 @@ ln -sf .rc.d/gitconfig .gitconfig
 ln -sf .rc.d/vimrc .vimrc
 ln -sf .rc.d/zshrc .zshrc
 
-exec "$SHELL"
 
 # link zsh themes
 cd $HOME/.oh-my-zsh/custom/themes
@@ -112,6 +114,8 @@ for name in `ls $RC_DIR/omz-theme`
 do
     ln -sf $RC_DIR/omz-theme/$name $name
 done
+
+exec "$SHELL"
 
 # install python requirements
 pyenv global $PYTHON_VERSION
