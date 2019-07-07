@@ -20,23 +20,6 @@ exist() {
 }
 
 
-# ensure zsh, git, curl, wget, and other softwares
-#if [[ `uname` == 'Darwin' ]]; then
-#    brew update
-#    brew install zsh tmux git curl wget aria2
-#    brew install openssl readline sqlite3 xz zlib
-#elif `exist apt-get`; then
-#    sudo apt update -y
-#    sudo apt install -y zsh tmux git curl wget aria2
-#    sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev xz-utils libxml2-dev libxmlsec1-dev libffi-dev
-#elif `exist yum`; then
-#    sudo yum update
-#    sudo yum install -y zsh tmux git curl wget aria2
-#    sudo yum install -y gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel xz
-#else
-#    echo 'not found any package installer'
-#    exit 1
-#fi
 sudo apt update -y
 sudo apt-get install -y zsh git curl wget
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libffi-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
@@ -77,16 +60,6 @@ else
     echo "pyenv is already installed"
 fi
 
-# install python
-#if ! pyenv versions | grep $PYTHON_VERSION > /dev/null; then
-#    env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install -kv $PYTHON_VERSION
-#else
-#    echo "Python v$PYTHON_VERSION is already installed"
-#fi
-
-
-# mkdir .local/bin
-#mkdir -p $HOME/.local/bin
 
 # clone rc.d
 if [ ! -d $RC_DIR ]; then
@@ -124,11 +97,10 @@ exec "$SHELL"
 
 # install python requirements
 pyenv global $PYTHON_VERSION
-#pip install -r $RC_DIR/requirements.txt
+
 source ~/.zshrc
-## setup aria2
-#mkdir -p $HOME/.aria2
-#cd $HOME/.aria2
-#ln -sf $RC_DIR/aria2.conf aria2.conf
 
 cd $_PWD
+
+echo "all done please restart!! "
+
