@@ -40,7 +40,7 @@ exist() {
 apt update -y
 apt-get install -y zsh git curl wget
 apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libffi-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
-xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl
 
 chsh -s /bin/zsh
 
@@ -59,7 +59,7 @@ else
     echo "oh-my-zsh is already installed"
 fi
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # install pyenv
 if [ ! -d $HOME/.pyenv ]; then
