@@ -75,7 +75,7 @@ DEFAULT_USER=`whoami`
 if [ -f "$HOME/.rc.d/aliases.sh" ]; then
     source $HOME/.rc.d/aliases.sh
 fi
-export PATH=~/.pyenv/bin:$PATH
-export PYENV_ROOT=~/.pyenv
+export PATH=$HOME/.pyenv/bin:$PATH
+export PYENV_ROOT=$HOME/.pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
