@@ -37,9 +37,9 @@ exist() {
 #    echo 'not found any package installer'
 #    exit 1
 #fi
-apt update -y
-apt-get install -y zsh git curl wget
-apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libffi-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
+sudo apt update -y
+sudo apt-get install -y zsh git curl wget
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libffi-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev python-openssl
 
 chsh -s /bin/zsh
