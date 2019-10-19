@@ -43,7 +43,7 @@ set fileformat=unix     "换行使用unix方式
 set wrap
 set ambiwidth=double
 set noerrorbells        "不显示响铃
-set visualbell          "可视化铃声
+"set visualbell          "可视化铃声
 set foldmarker={,}      "缩进符号
 set foldmethod=indent   "缩进作为折叠标识
 set foldlevel=100       "不自动折叠
