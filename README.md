@@ -6,4 +6,5 @@ curl -L https://raw.githubusercontent.com/hangadmin/envconf/master/install.sh | 
 ```
 #### TODO:
 - CentOS7 安装
+- 去掉切换到zsh时有yes/no的输入
    
